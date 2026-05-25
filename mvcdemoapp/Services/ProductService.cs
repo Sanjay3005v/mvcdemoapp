@@ -22,6 +22,31 @@ namespace mvcdemoapp.Services
         {
             return _products.FirstOrDefault(p => p.ProductId == id);
         }
+        public void AddProduct(Product product)
+        {
+            product.ProductId = _products.Max(product => product.ProductId + 1);
+            _products.Add(product);
+        }
+        public void UpdateProduct(Product product)
+        {
+            var existingProduct = _products.FirstOrDefault(p => p.ProductId == product.ProductId);
+            if (existingProduct != null)
+            {
+                existingProduct.ProductName = product.ProductName;
+                existingProduct.ProductPrice = product.ProductPrice;
+                existingProduct.ProductCategory = product.ProductCategory;
+                existingProduct.ProductDescription = product.ProductDescription;
+                existingProduct.IsAvailable = product.IsAvailable;
+            }
+        }
+        public void DeleteProduct(int id)
+        {
+            var delProduct = _products.FirstOrDefault(p => p.ProductId == id);
+            if (delProduct != null)
+            {
+                _products.Remove(delProduct);
+            }
+        }
 
     }
 }

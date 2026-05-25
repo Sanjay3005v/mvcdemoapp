@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using mvcdemoapp.Services;
+using mvcdemoapp.Models;
 
 namespace mvcdemoapp.Controllers
 {
@@ -24,6 +25,16 @@ namespace mvcdemoapp.Controllers
             if (product == null)
             {
                 return NotFound();
+            }
+            return View(product);
+        }
+
+        public IActionResult Create(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                _productService.AddProduct(product);
+                return RedirectToAction("Index");
             }
             return View(product);
         }

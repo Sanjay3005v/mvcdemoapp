@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model mvcdemoapp.Models.Product
+@{
+}
+
+<h2>Create Product</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Product Name:</label>
+        <input asp-for="ProductName" />
+    </div>
+
+    <div>
+        <label>Product Description:</label>
+        <input asp-for="ProductDescription" />
+    </div>
+
+    <div>
+        <label>Product Category:</label>
+        <input asp-for="ProductCategory" />
+    </div>
+
+    <div>
+        <label>Product Price:</label>
+        <input asp-for="ProductPrice" type="number"/>
+    </div>
+
+    <div>
+        <label>In Stock:</label>
+        <input asp-for="IsAvailable" type="checkbox"/>
+    </div>
+    <button type="submit">Save</button>
+</form>
