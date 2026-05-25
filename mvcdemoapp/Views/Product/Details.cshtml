@@ -12,8 +12,16 @@
     <p>@Model.ProductDescription</p>
     <h4>@Model.ProductPrice</h4>
     <p>
-        @* @if(Model.IsAvailable) *@
+        @if (Model.IsAvailable)
+        {
+            <span>in stock</span>
+        }
+        else
+        {
+            <span>out of stock</span>
+        }
     </p>
+    <a asp-action="Index"> Back to Catalog</a>
 </div>
 
 

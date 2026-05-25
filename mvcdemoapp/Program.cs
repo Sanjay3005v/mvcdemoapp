@@ -11,7 +11,9 @@ namespace mvcdemoapp
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            //builder.Services.Add
+            builder.Services.AddControllersWithViews();
+
+            builder.Services.AddSingleton<IProductService, ProductService>();
 
             var app = builder.Build();
 
