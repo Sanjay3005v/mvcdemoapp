@@ -12,6 +12,7 @@ namespace mvcdemoapp
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddSingleton<IProductService, ProductService>();
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
 
             var app = builder.Build();
 

@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model mvcdemoapp.Models.Customer
+@{
+    ViewData["Title"] = "customer Details";
+}
+
+<div>
+    <h2>@Model.FirstName</h2>
+    <h5>@Model.LastName</h5>
+    <p>@Model.Email</p>
+    <h4>@Model.PhoneNumber</h4>
+
+    <p>
+        @if (Model.IsActive)
+        {
+            <span>Active</span>
+        }
+        else
+        {
+            <span>InActive</span>
+        }
+    </p>
+    <a asp-action="Index">Back to Catalog</a>
+</div>
