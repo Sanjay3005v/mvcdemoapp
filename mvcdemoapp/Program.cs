@@ -11,8 +11,6 @@ namespace mvcdemoapp
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddControllersWithViews();
-
             builder.Services.AddSingleton<IProductService, ProductService>();
 
             var app = builder.Build();
@@ -33,7 +31,7 @@ namespace mvcdemoapp
             app.MapStaticAssets();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
+                pattern: "{controller=Product}/{action=Index}/{id?}")
                 .WithStaticAssets();
 
             app.Run();

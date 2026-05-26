@@ -3,7 +3,7 @@
 *@
 @model IEnumerable<mvcdemoapp.Models.Product>
 @{
-    ViewData["Title"] = "Produjct Catalog";
+    ViewData["Title"] = "Product Catalog";
 }
 
 <h2 class="mb-4">@ViewData["Title"]</h2>
@@ -25,9 +25,11 @@
                 <td>@product.ProductName</td>
                 <td>@product.ProductDescription</td>
                 <td>@product.ProductCategory</td>
-                <td>@product.ProductPrice</td>
-                <td>@product.ProductName</td>
+                <td>Rs @product.ProductPrice</td>
+                
                 <td><a asp-action="Details" asp-route-id="@product.ProductId">View Details</a></td>
+                <td><a asp-action="Edit" asp-route-id="@product.ProductId">Edit Product</a></td>
+                <td><a asp-action="Delete" asp-route-id="@product.ProductId">Delete Product</a></td>
             </tr>
         }
     </tbody>
